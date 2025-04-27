@@ -9,6 +9,7 @@ body {
   font-size: 18px;
   text-align: center;
   color: hsl(208, 11%, 55%);
+  background-color: hsl(193, 100%, 96%);
 }
 
 .container {
@@ -22,7 +23,7 @@ body {
   max-width: 500px;
   width: 100%;
   background-image: url(images/bg-hero-mobile.svg);
-  background-color: hsl(193, 100%, 96%);
+
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -54,6 +55,7 @@ footer .logo {
 
 .hrow .tryff:hover {
   color: hsl(208, 11%, 55%);
+  transition: color ease-in-out 0.3s;
 }
 
 .col {
@@ -72,44 +74,44 @@ footer .logo {
   margin-bottom: 2rem;
 }
 
-.header h1 {
+.header .title {
   font-weight: bold;
   margin-bottom: 2rem;
   color: hsl(192, 100%, 9%);
 }
 
-main > .col {
+.main > .col {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   margin: 5rem auto;
   padding: 5rem 3.5rem;
 }
 
-main h2 {
+.main .subtitle {
   color: hsl(192, 100%, 9%);
   margin-top: 5rem;
 }
 
-main p {
+.main .card__text {
   margin-top: 1.5rem;
   font-size: 1.1rem;
   line-height: 1.8;
 }
 
-.header p {
+.header .intro__text {
   color: hsl(192, 100%, 9%);
   font-size: 1.4rem;
   line-height: 1.5;
   margin-bottom: 2.5rem;
 }
 
-main {
+.main {
   background-color: #fff;
   width: 100%;
   position: relative;
   padding-bottom: 14rem;
 }
 
-main > .last1 {
+.main > .last1 {
   width: 95%;
   padding: 3rem 1rem;
   border-radius: 1.5rem;
@@ -121,14 +123,14 @@ main > .last1 {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
-.last1 > h2 {
+.last1 > .subtitle {
   margin-top: 0rem;
   margin-bottom: 2rem;
   padding: 0;
   font-size: 1.5rem;
 }
 
-button {
+.btn {
   font-family: inherit;
   color: #fff;
   background-color: hsl(322, 100%, 66%);
@@ -141,8 +143,9 @@ button {
   box-shadow: rgb(147, 42, 109) 0px 2px 7px;
 }
 
-button:hover {
+.btn:hover {
   background-color: hsl(322, 92%, 71%);
+  transition: background-color ease-in-out 0.3s;
 }
 
 .icon {
@@ -155,9 +158,9 @@ button:hover {
   margin: 5rem auto;
 }
 
-img {
-  max-width: 26rem;
-  width: 100%;
+.img {
+  max-width: 25rem;
+  width: 90%;
 }
 
 .logo1 {
@@ -180,10 +183,16 @@ footer {
   color: #fff;
 }
 
-footer .row p {
+footer .row a {
   margin-left: 1rem;
   text-align: left;
   line-height: 1.7;
+  color: #fff;
+  text-decoration: none;
+}
+
+footer .row a:hover {
+  text-decoration: underline;
 }
 
 footer .col__menu {
@@ -192,17 +201,22 @@ footer .col__menu {
   margin-top: 2rem;
 }
 
-.footer__col > .col__menu > div > p {
-  margin-bottom: 1.5rem;
+.footer__col > .col__menu > .menu__list {
+  margin-bottom: 1rem;
   font-size: 1rem;
-  cursor: pointer;
   font-size: 1.3rem;
-  white-space: nowrap;
+  list-style: none;
 }
 
-.footer__col > .col__menu > div > p:hover {
-  text-decoration: underline;
+.footer__col > .col__menu > .menu__list > li {
+  margin-bottom: 1rem;
   cursor: pointer;
+}
+
+.footer__col > .col__menu > .menu__list > li:hover {
+  color: hsl(322, 100%, 66%);
+  transition: color ease-in-out 0.3s;
+  text-decoration: underline;
 }
 
 footer .socials {
@@ -212,6 +226,7 @@ footer .socials {
   margin-top: 2rem;
   width: 100%;
   gap: 1.1rem;
+  list-style: none;
 }
 
 footer .socials i {
@@ -225,6 +240,8 @@ footer .socials i {
 footer .socials i:hover {
   color: hsl(322, 100%, 66%);
   border: 1px solid hsl(322, 100%, 66%);
+  transition: border ease-in-out 0.3s;
+  transition: color ease-in-out 0.3s;
 }
 
 footer .Copyright {
@@ -232,7 +249,7 @@ footer .Copyright {
   align-self: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 900px) {
   .container {
     max-width: 1400px;
     width: 100%;
@@ -264,7 +281,7 @@ footer .Copyright {
     width: 100%;
   }
 
-  .header > div {
+  .header > .intro {
     width: 46%;
     display: flex;
     flex-direction: column;
@@ -272,13 +289,13 @@ footer .Copyright {
     align-items: flex-start;
   }
 
-  .header > div > h1 {
+  .header > .intro > .title {
     text-align: left;
     line-height: 1.5;
     font-size: 2.5rem;
   }
 
-  .header > div > p {
+  .header > .intro > .intro__text {
     font-size: 1.1rem;
     text-align: left;
     font-weight: 500;
@@ -290,7 +307,7 @@ footer .Copyright {
     width: 100%;
   }
 
-  main {
+  .main {
     width: 100%;
     margin-top: 2rem;
     padding-bottom: 1rem;
@@ -300,13 +317,13 @@ footer .Copyright {
     width: 90%;
   }
 
-  main .col {
+  .main .col {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
   }
 
-  main .col > div {
+  .main .col > .card__info {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -315,21 +332,21 @@ footer .Copyright {
     width: 47%;
   }
 
-  main .col > div > h2 {
+  .main .col > .card__info > .subtitle {
     text-align: left;
     font-size: 2rem;
   }
 
-  main .col > div > p {
+  .main .col > .card__info > .card__text {
     text-align: left;
     font-size: 1.2rem;
   }
 
-  main .col > img {
+  .main .col > img {
     order: 2;
   }
 
-  main > .last1 {
+  .main > .last1 {
     width: 50%;
     margin: 0 auto;
     display: flex;
@@ -346,7 +363,7 @@ footer .Copyright {
     font-size: 0.9rem;
   }
 
-  footer > section {
+  footer > .footer__sect {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -355,24 +372,24 @@ footer .Copyright {
     padding: 0;
   }
 
-  footer > section > .footer__col {
+  footer > .footer__sect > .footer__col {
     padding: 0;
     margin: 0;
     width: 40%;
   }
 
-  footer > section > .footer__col > .row {
+  footer > .footer__sect > .footer__col > .row {
     margin-bottom: 1rem;
     margin-top: 0;
     padding: 0;
   }
 
-  footer > section > .footer__col > .row > .location {
+  footer > .footer__sect > .footer__col > .row > .location {
     width: 70%;
     font-size: 0.8rem;
   }
 
-  footer > section > .footer__col > .col__menu {
+  footer > .footer__sect > .footer__col > .col__menu {
     margin: 0 auto;
     padding: 0;
     display: flex;
@@ -381,27 +398,28 @@ footer .Copyright {
     align-items: center;
   }
 
-  footer > section > .footer__col > .col__menu > div > p {
+  footer > .footer__sect > .footer__col > .col__menu > .menu__list {
     margin-bottom: 2rem;
-    margin-right: 5rem;
-    font-size: 0.8rem;
+    margin-right: 6rem;
+    font-size: 1rem;
     cursor: pointer;
   }
 
-  footer > section > .div__footer > .socials,
-  footer > section > .div__footer > .row {
+  footer > .footer__sect > .div__footer > .socials,
+  footer > .footer__sect > .div__footer > .row {
     justify-content: flex-start;
     margin-top: 0;
-    margin-bottom: 8rem;
+    margin-bottom: 6.5rem;
     padding: 0;
+    list-style: none;
   }
 
-  footer > section > .div__footer > .socials > i {
+  footer > .footer__sect > .div__footer > .socials > i {
     font-size: 0.8rem;
     padding: 0.5rem;
   }
 
-  footer > section > .div__footer > .Copyright {
+  footer > .footer__sect > .div__footer > .Copyright {
     display: flex;
     width: 100%;
     justify-content: start;
